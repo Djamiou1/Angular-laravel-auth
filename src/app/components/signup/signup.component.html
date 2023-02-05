@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4 shadow radius-30 my-4">
-            <form [FormGroup]="form" (Submit)="login()">
-                <fieldset>
-                    <legend class="text-center">S'inscrire</legend>
+            <form class="form-group" [formGroup]="signupForm" (ngSubmit)="login(signupForm)">
+                
+                    <h2 class="text-center">S'inscrire</h2>
                     <div class="form-field">
                         <label>Nom:</label>
                         <input type="text" class="form-control" formControlName="name" required>
@@ -17,7 +17,7 @@
                         <label>Password:</label>
                         <input type="password" class="form-control" formControlName="password" required>
                     </div>
-                </fieldset>
+                
                 <div class="form-buttons">
                     <button class="btn btn-primary my-2">Register</button>
                 </div>

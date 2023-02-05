@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { SignupService } from "./../../signup/signup.service";
 
 @Component({
   selector: 'app-signup',
@@ -8,31 +8,27 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-   form!: FormGroup;
+   signupForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private authService: HttpClient
+    private service: SignupService
   ) { }
 
   ngOnInit(): void {
-     this.form = this.fb.group({
+     this.signupForm = this.fb.group({
        name:['', Validators.required],
        email:['', Validators.required],
        password:['', Validators.required]
      });
   }
-  login(): void{
-    const val = this.form.value;
-    console.log(val);
-    // if (val.email && val.password) {
-    //     this.authService.login(val.email, val.password)
-    //         .subscribe(
-    //             () => {
-    //                 console.log("User is logged in");
-                    
-    //             }
-    //         );
+  login(_data: any): void{
+    this.service.login(this.signupForm.getRawValue())
+             .subscribe((res: any) => {
+              console.log(res);
+             });
+    
+    
      }
 
 }
