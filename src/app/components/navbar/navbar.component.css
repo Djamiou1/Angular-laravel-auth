@@ -2,3 +2,13 @@
     background: linear-gradient(60deg, rgba(125, 224, 231, 0.4), rgba(135, 228, 143, 0.37));
     
 }
+.form{
+    border: 1px solid rgb(125, 231, 187);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(176, 224, 224);
+}
+.form>a{
+    color: black;
+    text-decoration: none;
+}

@@ -1,1 +1,25 @@
-<p>login works!</p>
+<main class="form-signin container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 shadow radius-30 my-4">
+            <form >
+                <fieldset>
+                    <legend class="text-center">Se connecter</legend>
+                    <div class="form-field">
+                        <label>E-mail:</label>
+                        <input type="email" name="email" class="form-control" formControlName="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label>Password:</label>
+                        <input type="password" name="password" class="form-control" formControlName="password" 
+                            type="password" required>
+                    </div>
+                </fieldset>
+                <div class="form-buttons">
+                    <button class="btn btn-primary my-2">Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>

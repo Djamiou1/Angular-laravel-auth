@@ -1,1 +1,28 @@
-<p>signup works!</p>
+<main class="form-signin container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 shadow radius-30 my-4">
+            <form [FormGroup]="form" (Submit)="login()">
+                <fieldset>
+                    <legend class="text-center">S'inscrire</legend>
+                    <div class="form-field">
+                        <label>Nom:</label>
+                        <input type="text" class="form-control" formControlName="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label>E-mail:</label>
+                        <input type="email" class="form-control" formControlName="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label>Password:</label>
+                        <input type="password" class="form-control" formControlName="password" required>
+                    </div>
+                </fieldset>
+                <div class="form-buttons">
+                    <button class="btn btn-primary my-2">Register</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>
