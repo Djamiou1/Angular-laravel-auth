@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SignupService } from "./../../signup/signup.service";
 
 @Component({
@@ -12,7 +13,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private service: SignupService
+    private service: SignupService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,9 @@ export class SignupComponent implements OnInit {
   login(_data: any): void{
     this.service.login(this.signupForm.getRawValue())
              .subscribe((res: any) => {
-              console.log(res);
+              this.router.navigate(['./signin']);
+              this.signupForm.reset();
+
              });
     
     

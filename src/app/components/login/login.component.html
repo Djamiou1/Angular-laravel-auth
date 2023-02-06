@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4 shadow radius-30 my-4">
-            <form >
+            <form [formGroup]="signinForm" (ngSubmit)="login(signinForm)">
                 <fieldset>
                     <legend class="text-center">Se connecter</legend>
                     <div class="form-field">
