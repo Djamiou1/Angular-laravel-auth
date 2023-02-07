@@ -12,9 +12,10 @@ export class SignupService {
     private http: HttpClient
   ) { }
 
-  login(_data: any) :Observable<any>{
-    return this.http.post('http://localhost:3000/signup', _data)
+   login(_data: any) :Observable<any>{
+    return this.http.post('http://localhost:8000/api/register', _data)
        
-        
-}
+   }
+
+  
 }

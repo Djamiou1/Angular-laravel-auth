@@ -8,19 +8,20 @@ import { ProfileService } from 'src/app/profile/profile.service';
 })
 export class ProfileComponent implements OnInit {
 
+  message: any = 'Désolé !!!!';
+
   constructor(
     private service: ProfileService
   ) { }
 
-  users: any;
-  message!: string
+  
   ngOnInit(): void {
     this.service.getUser().subscribe(
-      res =>{
-        this.users = res;
+      (res: any) =>{
+        this.message = `Hi ${res.name}`;
       },
       err =>{
-        this.message = 'Désolé !!!!!!';
+        console.log(err)
       }
      )
   }

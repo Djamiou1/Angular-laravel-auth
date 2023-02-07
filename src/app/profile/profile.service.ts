@@ -11,6 +11,7 @@ export class ProfileService {
   ) { }
 
   getUser(){
-    return this.http.get('http://localhost:3000/signup')
-  }
+    return this.http.get('http://localhost:8000/api/user', {withCredentials: true})
+      
+   }
 }
