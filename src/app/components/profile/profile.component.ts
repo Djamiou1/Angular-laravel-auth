@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { emitters } from 'src/app/emitters/emitters';
 import { ProfileService } from 'src/app/profile/profile.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ProfileService } from 'src/app/profile/profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-  message: any = 'Désolé !!!!';
+  message: any = 'You are not logged in';
 
   constructor(
     private service: ProfileService
@@ -19,9 +20,11 @@ export class ProfileComponent implements OnInit {
     this.service.getUser().subscribe(
       (res: any) =>{
         this.message = `Hi ${res.name}`;
+        emitters.authEmitter.emit(true);
       },
       err =>{
         console.log(err)
+        emitters.authEmitter.emit(false);
       }
      )
   }

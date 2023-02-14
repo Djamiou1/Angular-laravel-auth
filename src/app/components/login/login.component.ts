@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SigninService } from 'src/app/signin/signin.service';
+// import { SigninService } from 'src/app/signin/signin.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private service: SigninService,
+    private http: HttpClient,
+    // private service: SigninService,
     private router: Router
   ) { }
 
@@ -24,11 +26,14 @@ export class LoginComponent implements OnInit {
       password:['', Validators.required]
     });
   }
-    login(_data: any): void{
-        this.service.login(this.signinForm.getRawValue(), {withCredentials: true})
-        .subscribe((res: any) => {
-         this.router.navigate(['./']);
-         this.signinForm.reset();
+    login(_data:any): void{
+        this.http.post('http://localhost:8000/api/login',
+                       this.signinForm.getRawValue(), {
+                        withCredentials: true
+                      })
+                      .subscribe((res: any) => {
+                      this.router.navigate(['./']);
+                      this.signinForm.reset();
 
         });
    
