@@ -1,0 +1,46 @@
+<main class="form-signin container-fluid bg-light">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 bordered py-4 bg-white">
+            <form #uploadForm="ngForm" class="" (ngSubmit)="onSubmit(uploadForm)">
+                    <h2 class="text-center">Mettre en ligne un produit</h2>
+                    <div class="form-field">
+                        <label>Titre du produit :</label>
+                        <input type="text" class="form-control" [(ngModel)]="title" name="title" required>
+                    </div>
+                    <div class="form-field">
+                        <label>Image du produit :</label>
+                        <input type="file" name="image" (change)="onFileSelected($event)" required>
+                    </div>
+                    <div class="form-field">
+                        <label>Categorie :</label>
+                        <select  class="form-control"  [(ngModel)]="category" name="category" required>
+                            <option value="">Sélectionner une catégorie</option>
+                            <option value="Vêtement">Vêtement</option>
+                            <option value="Electronique">Electronique</option>
+                            <option value="Immobilier">Immobilier</option>
+                            <option value="Véhicule">Véhicule</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label>Prix :</label>
+                        <input type="number" name="price" class="form-control" [(ngModel)]="price" name="price" required>
+                    </div>
+                    <div class="form-field">
+                        <label>Description:</label>
+                        <input type="text" class="form-control" [(ngModel)]="description" name="description" required>
+                    </div>
+                    <div class="form-field">
+                        <label>Localisation:</label>
+                        <input type="text" class="form-control" [(ngModel)]="localisation" name="localisation" required>
+                        <input type="hidden" class="form-control" [(ngModel)]="user_id" name="user_id" readonly>
+                    </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-success my-2 mx-2" [disabled]="uploading || !uploadForm.valid">Enrégistrer</button>
+                    <button type="reset" class="btn btn-secondary my-2 mx-2">Annuler</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>

@@ -7,12 +7,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"></a>
-            </li>
+                <div class="form mx-2" *ngIf="authenticated" role="search">
+                    <a routerLink="/form">Publier un produit</a>
+                </div>
+                <div class="form mx-2" *ngIf="!authenticated" role="search">
+                    <a routerLink="/signup">Publier un produit</a>
+                </div>
             
             <li class="nav-item">
                 <a class="nav-link disabled"></a>

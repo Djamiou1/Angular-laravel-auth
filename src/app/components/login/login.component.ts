@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
                         withCredentials: true
                       })
                       .subscribe((res: any) => {
-                      this.router.navigate(['./']);
+                      this.router.navigate(['./profile']);
                       this.signinForm.reset();
 
         });

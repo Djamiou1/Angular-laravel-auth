@@ -9,12 +9,14 @@ import { RequestResetComponent } from './components/password/request-reset/reque
 import { ResponseResetComponent } from './components/password/response-reset/response-reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RequestResetComponent,
-    ResponseResetComponent
+    ResponseResetComponent,
+    
   ],
   imports: [
     BrowserModule,
