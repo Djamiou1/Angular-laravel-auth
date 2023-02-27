@@ -5,8 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RequestResetComponent } from './components/password/request-reset/request-reset.component';
-import { ResponseResetComponent } from './components/password/response-reset/response-reset.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -14,16 +12,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     NavbarComponent,
-    RequestResetComponent,
-    ResponseResetComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    HttpClientModule,
     FormsModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

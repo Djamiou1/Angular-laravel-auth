@@ -1,0 +1,45 @@
+<main class="form-signin container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 form bordered py-4 my-4">
+            <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)" *ngIf="produit" enctype="multipart/form-data">
+                    <h3 class="text-center text-warning">Mettre à jour ({{produit.title}})</h3>
+                    <div class="form-field">
+                        <label class="form-label">Titre du produit :</label>
+                        <input type="text" class="form-control" [(ngModel)]="produit.title" name="title" required>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Image du produit :</label>
+                        <input type="file" name="image" id="ipfile" [(ngModel)]="produit.image" (change)="onFileSelected($event)" required>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Categorie actuelle: </label><em class="text-warning">{{ produit.category }}</em>
+                        <select  class="form-select"  [(ngModel)]="produit.category" value="" name="category" required>
+                            <option value="Vêtement">Vêtement</option>
+                            <option value="Electronique">Electronique</option>
+                            <option value="Immobilier">Immobilier</option>
+                            <option value="Véhicule">Véhicule</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Prix :</label>
+                        <input type="number" name="price" class="form-control" [(ngModel)]="produit.price" name="price" required>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Description:</label>
+                        <input type="text" class="form-control" [(ngModel)]="produit.description" name="description" required>
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Localisation:</label>
+                        <input type="text" class="form-control" [(ngModel)]="produit.localisation" name="localisation" required>
+                        <input type="hidden" class="form-control" [(ngModel)]="produit.user_id" name="user_id" readonly>
+                    </div>
+                <div class="">
+                    <button type="submit" class="btn btn-outline-warning my-2 mx-2 " [disabled]="uploading || !uploadForm.valid">Mettre à jour</button>
+                    <button type="reset" class="btn btn-outline-danger my-2 mx-2">Annuler</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</main>

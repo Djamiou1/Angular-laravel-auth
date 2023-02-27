@@ -1,21 +1,21 @@
-<main class="form-signin container-fluid bg-light">
+<main class="form-signin container-fluid">
     <div class="row">
         <div class="col-md-4"></div>
-        <div class="col-md-4 bordered py-4 bg-white">
+        <div class="col-md-4 form bordered py-4 my-4">
             <form #uploadForm="ngForm" class="" (ngSubmit)="onSubmit(uploadForm)">
-                    <h2 class="text-center">Mettre en ligne un produit</h2>
+                    <h3 class="text-center text-info">Mettre en ligne un produit</h3>
                     <div class="form-field">
-                        <label>Titre du produit :</label>
+                        <label class="form-label">Titre du produit :</label>
                         <input type="text" class="form-control" [(ngModel)]="title" name="title" required>
                     </div>
                     <div class="form-field">
-                        <label>Image du produit :</label>
-                        <input type="file" name="image" (change)="onFileSelected($event)" required>
+                        <label class="form-label">Image du produit :</label>
+                        <input type="file" name="image" id="ipfile" (change)="onFileSelected($event)" required>
                     </div>
                     <div class="form-field">
-                        <label>Categorie :</label>
-                        <select  class="form-control"  [(ngModel)]="category" name="category" required>
-                            <option value="">Sélectionner une catégorie</option>
+                        <label class="form-label">Categorie :</label>
+                        <select  class="form-select"  [(ngModel)]="category" name="category" aria-placeholder="Sélectionner une catégorie" required>
+                            <!-- <option value="">Sélectionner une catégorie</option> -->
                             <option value="Vêtement">Vêtement</option>
                             <option value="Electronique">Electronique</option>
                             <option value="Immobilier">Immobilier</option>
@@ -23,21 +23,21 @@
                         </select>
                     </div>
                     <div class="form-field">
-                        <label>Prix :</label>
-                        <input type="number" name="price" class="form-control" [(ngModel)]="price" name="price" required>
+                        <label class="form-label">Prix :</label>
+                        <input type="number" name="price" class="form-control" [(ngModel)]="price" name="price" required/>
                     </div>
                     <div class="form-field">
-                        <label>Description:</label>
+                        <label class="form-label">Description:</label>
                         <input type="text" class="form-control" [(ngModel)]="description" name="description" required>
                     </div>
                     <div class="form-field">
-                        <label>Localisation:</label>
+                        <label class="form-label">Localisation:</label>
                         <input type="text" class="form-control" [(ngModel)]="localisation" name="localisation" required>
                         <input type="hidden" class="form-control" [(ngModel)]="user_id" name="user_id" readonly>
                     </div>
-                <div class="form-buttons">
-                    <button type="submit" class="btn btn-success my-2 mx-2" [disabled]="uploading || !uploadForm.valid">Enrégistrer</button>
-                    <button type="reset" class="btn btn-secondary my-2 mx-2">Annuler</button>
+                <div class="">
+                    <button type="submit" class="btn btn-outline-success my-2 mx-2" [disabled]="uploading || !uploadForm.valid">Enrégistrer</button>
+                    <button type="reset" class="btn btn-outline-secondary my-2 mx-2">Annuler</button>
                 </div>
             </form>
         </div>

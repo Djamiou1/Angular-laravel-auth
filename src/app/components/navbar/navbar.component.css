@@ -1,14 +1,27 @@
-.px-1{
-    background: linear-gradient(60deg, rgba(125, 224, 231, 0.4), rgba(135, 228, 143, 0.37));
+.bar{
+    /* background-image: url('https://cdn.wallpapersafari.com/51/1/1T4NnK.jpg'); */
+    /* linear-gradient(60deg, rgba(125, 224, 231, 0.4), rgba(135, 228, 143, 0.37)); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba();
     
 }
-.form{
-    border: 1px solid rgb(125, 231, 187);
-    padding: 10px;
-    border-radius: 8px;
-    background-color: rgb(176, 224, 224);
+nav,.form,.container-fluid,.collapse{
+    /* height: 60px !important; */
 }
-.form>a{
-    color: black;
+.form-a{
+    color: rgb(233, 168, 71);
     text-decoration: none;
+    padding-top: 10px !important;
+    padding-bottom: 16px !important;
+}
+.active{
+    border-bottom: 2px solid rgb(235, 144, 9) !important;
+}
+@media screen and (max-width: 992px) {
+    .active{
+        /* border-left: 2px solid rgb(235, 149, 20) !important; */
+        border-bottom: none !important;
+    }
 }

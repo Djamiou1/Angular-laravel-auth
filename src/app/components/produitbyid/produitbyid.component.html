@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-md-3 col-sl-2"></div>
+        <div class="col-lg-4 col-md-6 col-sl-8 my-4 py-4" *ngIf="produit">
+            <div class="card mb-2" *ngIf="produit">
+                <img class="card-image" [src]="'http://localhost:8000/storage/'+produit.image" alt="image du produit">
+                 <div class="card-body">
+                    <h5 class="card-title text">{{produit.title}}</h5>
+                    <h6>{{produit.category}}</h6>
+                    <h6>{{produit.description}}</h6>
+                    <em><strong>Prix : </strong>{{produit.price}}</em>
+                    <h6 class="text">{{produit.localisation}}</h6>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-warning mb-3 mx-2" routerLink="/edit/{{produit.id}}">Editer</button>
+                    <button class="btn btn-danger mb-3" (click)="deleteProduit(produit.id)">Supprimer</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sl-2"></div>
+    </div>
+</div>

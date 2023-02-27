@@ -1,17 +1,17 @@
-<div class="px-1">
+<div class="bar">
     <nav class="navbar navbar-expand-lg b-bottom shadow-sm">
         <div class="container-fluid">
-        <a class="navbar-brand" routerLink="/">Navbar</a>
+        <a class="navbar-brand" routerLink="/" routerLinkActive="" [routerLinkActiveOptions]="{ exact: true}">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <div class="form mx-2" *ngIf="authenticated" role="search">
-                    <a routerLink="/form">Publier un produit</a>
+                    <a routerLink="/form" class="form form-a">Publier un produit</a>
                 </div>
                 <div class="form mx-2" *ngIf="!authenticated" role="search">
-                    <a routerLink="/signup">Publier un produit</a>
+                    <a routerLink="/signup" class="form form-a">Publier un produit</a>
                 </div>
             
             <li class="nav-item">
@@ -20,14 +20,14 @@
             </ul>
             <!-- <ul *ngIf="!authenticated"> -->
                 <div class="form mx-2" *ngIf="!authenticated" role="search">
-                    <a routerLink="/signin">Login</a>
+                    <a routerLink="/signin" class="form form-a" routerLinkActive="active">Login</a>
                 </div>
                 <div class="form mx-2" *ngIf="!authenticated" role="search">
-                    <a routerLink="/signup">Register</a>
+                    <a routerLink="/signup" class="form form-a" routerLinkActive="active">Register</a>
                 </div>
             <!-- </ul> -->
                 <div class="form mx-2" *ngIf="authenticated" role="search">
-                  <a routerLink="/signin" (click)="logout()">Logout</a>
+                  <a routerLink="/signin" class="form form-a" (click)="logout()">Logout</a>
                 </div>
         </div>
         </div>

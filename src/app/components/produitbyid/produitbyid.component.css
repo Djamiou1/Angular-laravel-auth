@@ -1,0 +1,9 @@
+.card-image{
+    height: 300px;
+    object-fit: cover;
+}
+.container-fluid{
+    background-image: url('https://clippingpathstudio.com/wp-content/uploads/2021/03/Photography-Backdrops.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }

@@ -1,10 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-2 col-sm-6" *ngFor="let produit of produits">
-               <img [src]="produit.image" alt="">
-                <h5 style="white-space: nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100ch;">{{produit.title}}</h5>
-                <p style="white-space: nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100ch;">{{produit.description}}</p>
-                <p><strong>Price : </strong>{{produit.price}}</p>
+        <div class="col-lg-3 col-md-3 col-sl-6" *ngFor="let produit of produits">
+            <div  routerLink="produit/{{produit.id}}" class="card mb-2" *ngIf="produit">
+                <img class="card-image" [src]="'http://localhost:8000/storage/'+produit.image" alt="image du produit">
+                 <div class="card-body">
+                    <h5 class="card-title text">{{produit.title}}</h5>
+                    <em><strong>Prix : </strong>{{produit.price}}</em>
+                    <h6 class="text">{{produit.localisation}}</h6>
+                </div>
+                
+            </div>
         </div>
     </div>
 </div>
