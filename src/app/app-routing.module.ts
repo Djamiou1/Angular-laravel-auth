@@ -7,11 +7,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProduitformComponent } from './components/produitform/produitform.component';
 import { ProduitComponent } from './components/produit/produit.component';
 import { CommonModule } from '@angular/common';
+import { ProduitByIdComponent } from './components/produitbyid/produitbyid.component';
+import { EditProduitComponent } from './components/edit-produit/edit-produit.component';
 
 const routes: Routes = [
   { path: '', component: ProduitComponent, pathMatch: 'full'},
   { path: 'profile', component: ProfileComponent},
   { path: 'form', component: ProduitformComponent},
+  { path: 'produit/:id', component: ProduitByIdComponent},
+  { path: 'edit/:id', component: EditProduitComponent},
   { path: 'signin', component: LoginComponent},
   { path: 'signup', component: SignupComponent}
 ];
@@ -23,6 +27,9 @@ const routes: Routes = [
     ProfileComponent,
     ProduitformComponent,
     ProduitComponent,
+    ProduitByIdComponent,
+    EditProduitComponent
+    
   ],
   imports: [RouterModule.forRoot(routes),
     ReactiveFormsModule,
