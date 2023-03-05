@@ -45,22 +45,15 @@ export class EditProduitComponent implements OnInit {
     )
   }
 
-  onFileSelected(event: any) {
-    this.file = event.target.files[0];
-  }
+  // onFileSelected(event: any) {
+  //   this.file = event.target.files[0];
+  // }
 
   onSubmit(form: NgForm) {
     this.uploading = true;
-    const formData = new FormData();
-    formData.append('title', this.produit.title);
-    formData.append('category', this.produit.category);
-    formData.append('price', this.produit.price);
-    formData.append('description', this.produit.description);
-    formData.append('localisation', this.produit.localisation);
-    formData.append('user_id', this.produit.user_id);
-    formData.append('image', this.file, this.file.name);
-    this.produitformService.editProduit(this.id, formData).subscribe((response: any) => {
-      form.reset();
+    
+    this.produitformService.editProduit(this.id, this.produit).subscribe((response: any) => {
+      console.log(form);
       this.router.navigate(['/produit/'+this.id]);
     }, (error: any) => {
       console.log('Erreur lors de la mise à jour :', error);

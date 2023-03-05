@@ -2,16 +2,16 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4 form bordered py-4 my-4">
-            <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)" *ngIf="produit" enctype="multipart/form-data">
+            <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)" *ngIf="produit">
                     <h3 class="text-center text-warning">Mettre à jour ({{produit.title}})</h3>
                     <div class="form-field">
                         <label class="form-label">Titre du produit :</label>
                         <input type="text" class="form-control" [(ngModel)]="produit.title" name="title" required>
                     </div>
-                    <div class="form-field">
+                    <!-- <div class="form-field">
                         <label class="form-label">Image du produit :</label>
-                        <input type="file" name="image" id="ipfile" [(ngModel)]="produit.image" (change)="onFileSelected($event)" required>
-                    </div>
+                        <input type="file" name="image" id="ipfile" [(ngModel)]="produit.image"  required>
+                    </div> -->
                     <div class="form-field">
                         <label class="form-label">Categorie actuelle: </label><em class="text-warning">{{ produit.category }}</em>
                         <select  class="form-select"  [(ngModel)]="produit.category" value="" name="category" required>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-field">
                         <label class="form-label">Prix :</label>
-                        <input type="number" name="price" class="form-control" [(ngModel)]="produit.price" name="price" required>
+                        <input type="number" name="price" class="form-control" [(ngModel)]="produit.price" required>
                     </div>
                     <div class="form-field">
                         <label class="form-label">Description:</label>

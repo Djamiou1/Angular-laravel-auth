@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { ProduitByIdComponent } from './components/produitbyid/produitbyid.component';
 import { EditProduitComponent } from './components/edit-produit/edit-produit.component';
 
+
 const routes: Routes = [
   { path: '', component: ProduitComponent, pathMatch: 'full'},
   { path: 'profile', component: ProfileComponent},
@@ -34,7 +35,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes),
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
 
   ],
   exports: [RouterModule]
